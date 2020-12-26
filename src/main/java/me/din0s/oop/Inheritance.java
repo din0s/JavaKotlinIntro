@@ -1,9 +1,24 @@
 package me.din0s.oop;
 
+import me.din0s.oop.classes.animals.Animal;
+import me.din0s.oop.classes.animals.fish.Shark;
+import me.din0s.oop.classes.animals.mammals.Cow;
+import me.din0s.oop.classes.animals.mammals.Human;
+import me.din0s.oop.classes.shapes.Circle;
+import me.din0s.oop.classes.shapes.Rectangle;
+import me.din0s.oop.classes.shapes.Shape2D;
+import me.din0s.oop.classes.shapes.Square;
+
 public class Inheritance {
     public static void main(String[] args) {
+        runAnimals();
+        runShapes();
+    }
+
+    private static void runAnimals() {
         Cow calvinTheCow = new Cow();
         calvinTheCow.showInfo();
+        calvinTheCow.makeMilk();
 
         Human me = new Human("Konstantinos");
         me.showInfo();
@@ -20,78 +35,18 @@ public class Inheritance {
         animal.die();
         animal.showInfo();
     }
-}
 
-abstract class Animal {
-    private final int legs;
-    private boolean isAlive;
+    private static void runShapes() {
+        Rectangle rect = new Rectangle(5.5, 2);
+        rect.showInfo();
 
-    Animal(int legs) {
-        this.legs = legs;
-        this.isAlive = true;
-    }
+        Square square = new Square(3);
+        square.showInfo();
 
-    void die() {
-        this.isAlive = false;
-    }
+        Circle circle = new Circle(1);
+        circle.showInfo();
 
-    void showInfo() {
-        System.out.printf("Hi, I'm an animal with %d legs%n", legs);
-        System.out.println("I'm currently " + (isAlive ? "alive" : "dead"));
+        Shape2D shape = new Circle(10);
+        shape.showInfo();
     }
 }
-
-abstract class Mammal extends Animal {
-    private final boolean isVegetarian;
-
-    Mammal(boolean isVegetarian) {
-        super(4);
-        this.isVegetarian = isVegetarian;
-    }
-
-    Mammal(int legs, boolean isVegetarian) {
-        super(legs);
-        this.isVegetarian = isVegetarian;
-    }
-
-    @Override
-    void showInfo() {
-        super.showInfo();
-        if (isVegetarian) {
-            System.out.println("I'm also vegetarian!");
-        }
-    }
-}
-
-abstract class Fish extends Animal {
-    Fish() {
-        super(0);
-    }
-}
-
-class Cow extends Mammal {
-    Cow() {
-        super(true);
-    }
-}
-
-class Human extends Mammal {
-    private String name;
-
-    Human(String name) {
-        super(2, false);
-        this.name = name;
-    }
-
-    void rename(String name) {
-        this.name = name;
-    }
-
-    @Override
-    void showInfo() {
-        super.showInfo();
-        System.out.println("My name is " + name);
-    }
-}
-
-class Shark extends Fish {}
