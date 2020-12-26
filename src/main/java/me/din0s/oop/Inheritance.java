@@ -12,6 +12,7 @@ import me.din0s.oop.classes.shapes.Square;
 public class Inheritance {
     public static void main(String[] args) {
         runAnimals();
+        System.out.println();
         runShapes();
     }
 
@@ -19,16 +20,21 @@ public class Inheritance {
         Cow calvinTheCow = new Cow();
         calvinTheCow.showInfo();
         calvinTheCow.makeMilk();
+        System.out.println();
 
         Human me = new Human("Konstantinos");
         me.showInfo();
         me.rename("dinos");
+        System.out.println();
         me.showInfo();
+        System.out.println();
 
         Shark simonTheShark = new Shark();
         simonTheShark.showInfo();
         simonTheShark.die();
+        System.out.println();
         simonTheShark.showInfo();
+        System.out.println();
 
         Animal animal;
         animal = calvinTheCow;
@@ -39,12 +45,15 @@ public class Inheritance {
     private static void runShapes() {
         Rectangle rect = new Rectangle(5.5, 2);
         rect.showInfo();
+        System.out.println();
 
         Square square = new Square(3);
         square.showInfo();
+        System.out.println();
 
         Circle circle = new Circle(1);
         circle.showInfo();
+        System.out.println();
 
         Shape2D shape = new Circle(10);
         shape.showInfo();
