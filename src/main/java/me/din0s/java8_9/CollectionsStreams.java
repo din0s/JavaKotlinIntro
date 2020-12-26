@@ -21,17 +21,17 @@ public class CollectionsStreams {
         }
 
         // map
+        List<String> myTransformedList2 = new ArrayList<>();
         for (String s : myTransformedList) {
             String t = s.substring(0, 1).toUpperCase() + s.substring(1);
-            myTransformedList.remove(s);
-            myTransformedList.add(t);
+            myTransformedList2.add(t);
         }
 
         // sort
-        myTransformedList.sort(Comparator.naturalOrder());
+        myTransformedList2.sort(Comparator.naturalOrder());
 
         // print
-        for (String s : myTransformedList) {
+        for (String s : myTransformedList2) {
             System.out.println(s);
         }
 
