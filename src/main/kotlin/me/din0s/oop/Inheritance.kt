@@ -1,4 +1,4 @@
-package me.din0s
+package me.din0s.oop
 
 import kotlin.math.PI
 import kotlin.math.pow

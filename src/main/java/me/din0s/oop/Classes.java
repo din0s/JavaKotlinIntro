@@ -1,4 +1,4 @@
-package me.din0s.java7;
+package me.din0s.oop;
 
 public class Classes {
     public static void main(String[] args) {

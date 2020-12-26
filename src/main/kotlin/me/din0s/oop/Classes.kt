@@ -1,4 +1,4 @@
-package me.din0s
+package me.din0s.oop
 
 class Person(val name: String, var age: Int = 0) {
     fun introduce() {
